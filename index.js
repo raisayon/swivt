@@ -40,7 +40,7 @@ app.get('/weather/:latlon', async (request, response) => {
   const lon = latlon[1];
   console.log(lat, lon);
   const api_key = process.env.API_KEY;
-  const weather_url = https://samples.openweathermap.org/data/2.5/weather?id=2172797&appid=bbb88fa2a81eec6378b4a3c57d494ccf;
+  const weather_url = `https://api.darksky.net/forecast/${api_key}/${lat},${lon}/?units=si`;
   const weather_response = await fetch(weather_url);
   const weather_data = await weather_response.json();
 
